@@ -1,0 +1,5 @@
+Testsuite: com.example.test.VlanTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.538 sec
+
+Testcase: testIsValidVlan took 0.006 sec
+Testcase: testSetupInterfaces took 0.467 sec
