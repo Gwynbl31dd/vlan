@@ -168,7 +168,7 @@ public class VlanTest {
 		// This is what I expect from the Template variable object.
 		// I am not tacking care of the template xml, only what I will pass to it.
 		// This is a code isolation.
-		myExpectation = "{VLAN_ID='" + vlanString + "', DEVICE='\" + deviceName + \"', INTF_NAME='" + interfaceId
+		myExpectation = "{VLAN_ID='" + vlanString + "', DEVICE='" + deviceName + "', INTF_NAME='" + interfaceId
 				+ "', INT_TYPE='" + interfaceType + "'}";
 	}
 
