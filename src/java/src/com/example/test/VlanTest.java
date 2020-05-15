@@ -24,10 +24,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Unit test using Mockito and JUnit Used as a tutorial for the NSO Factory
- * This package uses Mockito and JUNIT
- * Make sure you add these jar files to your NSO jar folder,
- * and also add that jars to your eclipse.
+ * Unit test using Mockito and JUnit Used as a tutorial for the NSO Factory This
+ * package uses Mockito and JUNIT Make sure you add these jar files to your NSO
+ * jar folder, and also add that jars to your eclipse.
  * 
  * @author Anthony Paulin <apaulin@cisco.com>
  * @version 1.0
@@ -112,19 +111,19 @@ public class VlanTest {
 		boolean result = vlanRFS.isValidVlan(vlan);
 		// I expect the test to be true
 		assertTrue(result);
-		//Simple test with a negative vlan
+		// Simple test with a negative vlan
 		vlan = "-8";
 		// Now, lets try to add our vlan to the test method
 		result = vlanRFS.isValidVlan(vlan);
 		// I expect the test to be false
 		assertFalse(result);
-		//Lets try using a vlan at the uper limit
+		// Lets try using a vlan at the uper limit
 		vlan = "4094";
 		// Now, lets try to add our vlan to the test method
 		result = vlanRFS.isValidVlan(vlan);
 		// I expect the test to be true
 		assertTrue(result);
-		//Lets try with a vlan out of range
+		// Lets try with a vlan out of range
 		vlan = "5000";
 		// Now, lets try to add our vlan to the test method
 		result = vlanRFS.isValidVlan(vlan);
@@ -147,9 +146,9 @@ public class VlanTest {
 	 */
 	private void buildMocks(NavuList interfaces, NavuNode service, Template vlanTemplate, NavuContainer container,
 			NavuLeaf leafDevice, NavuLeaf leafIntType, CSCase interfaceCase) throws NavuException {
-		//Here I create a mocking of all the objects interaction.
-		//It is easy to understand, I use "when" you use this command,
-		//Then I return this object/value.
+		// Here I create a mocking of all the objects interaction.
+		// It is easy to understand, I use "when" you use this command,
+		// Then I return this object/value.
 		when(leafDevice.valueAsString()).thenReturn(deviceName);
 		when(leafIntType.valueAsString()).thenReturn(interfaceId);
 		when(container.leaf("device")).thenReturn(leafDevice);
@@ -166,11 +165,11 @@ public class VlanTest {
 	 * variables)
 	 */
 	private void buildOutput() {
-		//This is what I expect from the Template variable object.
-		//I am not tacking care of the template xml, only what I will pass to it.
+		// This is what I expect from the Template variable object.
+		// I am not tacking care of the template xml, only what I will pass to it.
 		// This is a code isolation.
-		myExpectation = "{DEVICE='" + deviceName + "', INTF_NAME='" + interfaceId + "', INT_TYPE='" + interfaceType
-				+ "', VLAN_ID='" + vlanString + "'}";
+		myExpectation = "{VLAN_ID='" + vlanString + "', DEVICE='\" + deviceName + \"', INTF_NAME='" + interfaceId
+				+ "', INT_TYPE='" + interfaceType + "'}";
 	}
 
 }
