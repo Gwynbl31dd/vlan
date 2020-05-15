@@ -49,6 +49,7 @@
 			<classpath location="lib/hamcrest-core-1.3.jar" />
 			<classpath location="lib/ant.jar" />
 			<classpath location="lib/ant-junit.jar" />
+			<classpath refid="core-libs" />
 			<classpath>
 				<pathelement location="${classes.dir}" />
 				<pathelement location="${build.tests}" />
