@@ -24,4 +24,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Check if the tests exist
-      run: '(test -f src/java/result.xml && echo Test exists)
+      run: test -f src/java/result.xml && echo Test exists
